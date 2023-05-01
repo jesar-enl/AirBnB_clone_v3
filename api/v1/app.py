@@ -26,6 +26,7 @@ app.register_blueprint(app_views)
 # Declare method to handle teardown_appcontext
 @app.teardown_appcontext
 def teardown_db_connection(exception):
+    """close the session"""
     storage.close()
 
 
